@@ -236,15 +236,15 @@
       <input type="search" placeholder="Pesquisar" />
     </div>
 
-    <img class="main-image" src="dj.img.jpg" alt="DJ animado" />
+    <img class="main-image" src="Imagens/dj.img.jpg" alt="DJ animado" />
 
     <div class="genres-section">
-      <div class="genre"><img src="country.img.jpg" alt="Country" /><div>COUNTRY</div></div>
-      <div class="genre"><img src="sertanejo.img.jpg" alt="Sertanejo" /><div>SERTANEJO</div></div>
-      <div class="genre"><img src="blues.img.jpg" alt="Blues" /><div>BLUES</div></div>
-      <div class="genre"><img src="funk.img.jpg" alt="Funk" /><div>FUNK</div></div>
-      <div class="genre"><img src="eletronica.img.jpg" alt="Eletrônica" /><div>ELETRÔNICA</div></div>
-      <div class="genre"><img src="reggae.img.jpg" alt="Reggae" /><div>REGGAE</div></div>
+      <div class="genre"><img src= "Imagens/country.img.jpg" alt="Country" /><div>COUNTRY</div></div>
+      <div class="genre"><img src="Imagens/sertanejo.img.jpg" alt="Sertanejo" /><div>SERTANEJO</div></div>
+      <div class="genre"><img src="Imagens/blues.img.jpg" alt="Blues" /><div>BLUES</div></div>
+      <div class="genre"><img src="Imagens/funk.img.jpg" alt="Funk" /><div>FUNK</div></div>
+      <div class="genre"><img src="Imagens/eletronica.img.jpg" alt="Eletronica" /><div>ELETRONICA</div></div>
+      <div class="genre"><img src="Imagens/reggae.img.jpg" alt="Reggae" /><div>REGGAE</div></div>
     </div>
 
     <button class="btn-listen">OUÇA AGORA</button>
@@ -252,35 +252,36 @@
     <section class="premium-section">
       <h2>ACESSE AS NOSSAS MÚSICAS PREMIUM</h2>
       <div class="premium-content">
-        <img class="premium-image" src="thumb.img.jpg" alt="DJ na festa" />
+        <img class="premium-image" src="Imagens/thumb.img.jpg" alt="DJ na festa" />
 
         <div class="premium-genres">
-          <div class="premium-genre"><img src="rock.img.jpg" alt="Rock" /><div>ROCK</div></div>
-          <div class="premium-genre"><img src="jazz.img.jpg" alt="Jazz" /><div>JAZZ</div></div>
-          <div class="premium-genre"><img src="forro.img.jpg" alt="Forró" /><div>FORRÓ</div></div>
-          <div class="premium-genre"><img src="hiphop.img.jpg" alt="Hip Hop" /><div>HIP HOP</div></div>
+          <div class="premium-genre"><img src="Imagens/rock.img.jpg" alt="Rock" /><div>ROCK</div></div>
+          <div class="premium-genre"><img src="Imagens/jazz.img.jpg" alt="Jazz" /><div>JAZZ</div></div>
+          <div class="premium-genre"><img src="Imagens/forro.img.jpg" alt="forro" /><div>FORRO</div></div>
+          <div class="premium-genre"><img src="Imagens/hiphop.img.jpg" alt="hiphop" /><div>HIPHOP</div></div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- PLAYER DE MÚSICA -->
-  <audio id="player" controls></audio>
+<!-- Player fixo -->
+<audio id="player" controls></audio>
 
-  <!-- SCRIPT PARA TOCAR MÚSICA -->
-  <script>
-    const player = document.getElementById('player');
-    const genres = document.querySelectorAll('.genre, .premium-genre');
+<script>
+  const player = document.getElementById("player");
+  const genres = document.querySelectorAll(".genre, .premium-genre");
 
-    genres.forEach(genre => {
-      genre.addEventListener('click', () => {
-        const name = genre.textContent.trim().toLowerCase().replace(/\s/g, '');
-        const audioPath = `${name}.mp3`;
-
-        player.src = audioPath;
-        player.play().catch(err => console.error('Erro ao tocar:', err));
-      });
+  genres.forEach(genre => {
+    genre.addEventListener("click", () => {
+      let name = genre.innerText.trim().toLowerCase(); 
+      player.src = `Musica/${name}.mp3`;
+      player.play();
     });
-  </script>
+  });
+</script>
+
+  
+
+
 </body>
 </html>
